@@ -25,7 +25,7 @@
         top: 50%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%) 
+        transform: translate(-65%, -130%) 
    } 
 
 </style>
@@ -38,6 +38,8 @@
      <option type="text">Windows vista</option>
      <option type="text">Windows 7</option>
      <option type="text">Windows 10</option>
+     <option type="text">Astra Linux</option>
+     <option type="text">Ubuntu</option>
     </optgroup>
    </select> 
  
@@ -66,7 +68,9 @@
 
 <?php
 
-$connect = mysqli_connect('localhost' ,  'root' , '', 'diplom');
+//$connect = mysqli_connect('localhost' ,  'root' , '', 'diplom');
+
+//mysqli_set_charset($connect , "utf8");
 
 $name = $_POST['name'];
 $name2 = $_POST['name2']; 
@@ -74,8 +78,16 @@ $name2 = $_POST['name2'];
 
 
 
-$result = mysqli_query($connect , "INSERT INTO `diplom`.`form1` ( `test`) VALUES ( '$name');");
-$result2 = mysqli_query($connect , "INSERT INTO `diplom`.`form1` ( `test2`) VALUES ( '$name2');");
+//$result = mysqli_query($connect , "INSERT INTO `diplom`.`form1` ( `test` , `test2` ) VALUES ( '$name' , '$name2');");
+//$result2 = mysqli_query($connect , "INSERT INTO `diplom`.`form1` ( `test2`) VALUES ( '$name2');");
+
+if($name=='Windows 10' && $name2=='свой ПК')
+{
+    //$result2 = mysqli_query($connect , "INSERT INTO `diplom`.`form1` ( `test`) VALUES ( '$name2');");
+    echo '<p>Инсктрукция PDF <a href="Zayavlenie_dlya_bakalavrov.pdf" target="_blank">открыть в браузере</a>';
+    echo '<p>Файл для развёртывания ВМ на Вашей ОС <a href="Zayavlenie_dlya_bakalavrov.pdf" download>Скачать </a>';
+
+}
 
 
 
