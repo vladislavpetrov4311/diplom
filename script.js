@@ -30,6 +30,7 @@ var userDeviceArray = [
 var platform = navigator.userAgent;
 
 //просто для примера
+//
 var T, q_ , q1_;
 T = '<q1>Более подробно</q1><p>';
 q_ = '<q1>';
